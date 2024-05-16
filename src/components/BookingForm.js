@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const BookingForm = (props) => {
     const [date, setDate] = useState("");
@@ -7,19 +7,19 @@ const BookingForm = (props) => {
     const [occasion, setOccasion] = useState("");
 
     const handleSubmit = (e) => {
-        e.preventDefualt()
-        props.SubmitForm(e);
+        e.preventDefault();
+        props.submitForm(e);
     }
 
     const handleChange = (e) => {
         setDate(e);
-        props.dispatch(e)
+        props.dispatch(e);
     }
     return (
         <header>
             <section>
                 <form onSubmit={handleSubmit}>
-                    <feildset>
+                    <fieldset>
                         <div>
                             <label htmlFor='book-date'>Choose Date:</label>
                             <input id='book-date' value={date} onChange={(e) => handleChange(e.target.value) } type='date' required />
@@ -48,7 +48,7 @@ const BookingForm = (props) => {
                             <input aria-label='On Click' type='submit' value={'Make Your Reservation'}></input>
                         </div>
 
-                    </feildset>
+                    </fieldset>
 
                 </form>
             </section>
